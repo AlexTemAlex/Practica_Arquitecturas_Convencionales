@@ -2,7 +2,7 @@
 package com.AS.inventarioMVC.controller;
 
 import com.AS.inventarioMVC.model.Product;
-import com.AS.inventarioMVC.service.ProductService;
+import com.AS.inventarioMVC.service.impl.ProductServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ProductController {
-    private final ProductService productServ;
+    private final ProductServiceImpl productServ;
 
-    public ProductController(ProductService productServ) {
+    public ProductController(ProductServiceImpl productServ) {
         this.productServ = productServ;
     }
     

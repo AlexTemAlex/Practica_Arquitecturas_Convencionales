@@ -2,15 +2,15 @@
 package com.AS.inventarioMVC.service.impl;
 
 import com.AS.inventarioMVC.model.Product;
-import com.AS.inventarioMVC.repository.impl.ProductMapper;
+import com.AS.inventarioMVC.repository.impl.ProductRepositoryImpl;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ProductServiceImpl {
-    private final ProductMapper productRepo;
+    private final ProductRepositoryImpl productRepo;
 
-    public ProductServiceImpl(ProductMapper productRepo) {
+    public ProductServiceImpl(ProductRepositoryImpl productRepo) {
         this.productRepo = productRepo;
     }
     
