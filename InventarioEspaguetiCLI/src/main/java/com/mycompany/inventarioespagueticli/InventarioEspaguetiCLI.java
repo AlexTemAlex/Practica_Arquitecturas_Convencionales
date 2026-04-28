@@ -47,7 +47,7 @@ public class InventarioEspaguetiCLI {
         int option = 0;
         
         while (true) {            
-            System.out.println("\n=== INVENTARIO ULTRA SPAGHETTI ===");
+            System.out.println("\n=== INVENTARIO SPAGHETTI CODE ===");
             System.out.println("1. Agregar producto");
             System.out.println("2. Listar productos");
             System.out.println("3. Vender producto");
