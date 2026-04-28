@@ -2,6 +2,9 @@
 package com.AS.inventarioMVC.model;
 
 public class Product {
+    private static long counter = 1;
+    
+    private Long id;
     private String name;
     private int quantity;
     private double price;
@@ -9,9 +12,11 @@ public class Product {
     private String supplier;
 
     public Product() {
+         this.id = counter++; 
     }
 
     public Product(String name, int quantity, double price, String category, String supplier) {
+        this.id = counter++;        
         this.name = name;
         this.quantity = quantity;
         this.price = price;
@@ -59,9 +64,19 @@ public class Product {
         this.supplier = supplier;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "Product{" + "name=" + name + ", quantity=" + quantity + ", price=" + price + ", category=" + category + ", supplier=" + supplier + '}';
-    }    
+        return "Product{" + "id=" + id + ", name=" + name + ", quantity=" + quantity + ", price=" + price + ", category=" + category + ", supplier=" + supplier + '}';
+    }
+
+     
     
 }

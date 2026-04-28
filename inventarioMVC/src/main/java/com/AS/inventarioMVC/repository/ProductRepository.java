@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface ProductRepository {
     public List<Product> findAll();
     public void save(Product product);
+    public void del(int idx);
+    public Product findByIndex(int idx);
 }
