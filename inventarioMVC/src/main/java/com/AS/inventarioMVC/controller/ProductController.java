@@ -35,7 +35,7 @@ public class ProductController {
     }
 
     @PostMapping("/sell")
-    public String sellProduct(@RequestParam int index,
+    public String sellProduct(@RequestParam Long index,
     @RequestParam int quantity,
     Model model) {
 
@@ -60,7 +60,7 @@ public class ProductController {
     }
 
     @PostMapping("/delete")
-    public String deleteProduct(@RequestParam int index) {
+    public String deleteProduct(@RequestParam Long index) {
 
         productServ.delete(index);
 
