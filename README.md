@@ -28,10 +28,50 @@ El repositorio contiene dos proyectos principales:
 * Maven
 
 ---
+## 🧪 Cómo ejecutar el proyecto (Codespaces)
 
-## 🧪 Cómo ejecutar el proyecto
+## ⚙️ 1. Configuración del entorno (Dev Container)
 
-### 🔹 1. Ejecutar versión CLI (Código Espagueti)
+📁 `.devcontainer/devcontainer.json`
+
+```json
+{
+  "name": "Java 17 Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17"
+    },
+    "ghcr.io/devcontainers/features/maven:1": {}
+  }
+}
+```
+
+---
+
+## 🔄 2. Reiniciar entorno
+
+En VS Code (Codespaces):
+
+Ctrl + Shift + P
+
+Ejecutar:
+
+Rebuild Container
+
+---
+
+## 🧰 3. Instalar/verificar Maven (si hace falta)
+
+```bash
+sudo apt update
+sudo apt install maven -y
+mvn -version
+```
+
+---
+
+## 🔹 4. Ejecutar versión CLI (Código Espagueti)
 
 ```bash
 cd InventarioEspaguetiCLI
@@ -41,19 +81,13 @@ mvn exec:java -Dexec.mainClass="com.mycompany.inventarioespagueticli.InventarioE
 
 ---
 
-### 🔹 2. Ejecutar versión MVC (Spring Boot)
+## 🔹 5. Ejecutar versión MVC (Spring Boot)
 
 ```bash
 cd inventarioMVC
+chmod +x mvnw
 ./mvnw spring-boot:run
 ```
-
-Luego abrir en el navegador:
-
-```
-http://localhost:8080
-```
-
 ---
 
 ## ⚙️ Funcionalidades
