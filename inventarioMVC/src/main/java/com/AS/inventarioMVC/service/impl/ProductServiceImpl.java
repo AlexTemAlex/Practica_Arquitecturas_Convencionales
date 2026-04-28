@@ -18,18 +18,18 @@ public class ProductServiceImpl {
         return productRepoImpl.findAll();
     }
 
-    public Product findByIndex(int idx) {
-        return productRepoImpl.findByIndex(idx-1);
+    public Product findByIndex(Long idx) {
+        return productRepoImpl.findByIndex(idx);
     }
     
     public void add(Product product) {
         productRepoImpl.save(product);
     } 
     
-    public double sell(int index, int quantity) {
+    public double sell(Long index, int quantity) {
         try {
 
-            Product p = productRepoImpl.findByIndex(index-1);
+            Product p = productRepoImpl.findByIndex(index);
 
             if (p == null) {
                 System.out.println("Producto no encontrado");
@@ -66,9 +66,9 @@ public class ProductServiceImpl {
         }
     }
 
-    public void delete(int idx) {
+    public void delete(Long idx) {
         try {
-            productRepoImpl.del(idx - 1);
+            productRepoImpl.del(idx);
         } catch (Exception e) {
             System.out.println("Error al eliminar: " + e.getMessage());
         }
