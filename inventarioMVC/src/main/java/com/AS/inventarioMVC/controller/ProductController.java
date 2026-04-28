@@ -56,7 +56,7 @@ public class ProductController {
 
         model.addAttribute("products", productServ.getAll());
 
-        return "index";
+        return "redirect:/";
     }
 
     @PostMapping("/delete")
