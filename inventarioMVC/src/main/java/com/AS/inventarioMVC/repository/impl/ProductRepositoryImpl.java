@@ -38,13 +38,18 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
-    public void del(int idx) {
-        this.inventory.remove(idx);
+    public void del(Long id) {
+        inventory.removeIf(p -> id.equals(p.getId()));
     }
 
     @Override
-    public Product findByIndex(int idx) {
-        return this.inventory.get(idx);
+    public Product findByIndex(Long id) {
+        for (Product p : inventory) {
+            if (id.equals(p.getId())) {
+                return p;
+            }
+        }
+        return null;
     }
     
 }
