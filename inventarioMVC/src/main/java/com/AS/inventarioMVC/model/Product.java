@@ -59,6 +59,9 @@ public class Product {
         this.supplier = supplier;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Product{" + "name=" + name + ", quantity=" + quantity + ", price=" + price + ", category=" + category + ", supplier=" + supplier + '}';
+    }    
     
 }
